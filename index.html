@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Telefoningiz xavf ostida!</title>
+    <style>
+        body {
+            background-color: #111;
+            color: red;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding-top: 60px;
+        }
+        h1 {
+            font-size: 32px;
+            color: #ff3333;
+        }
+        #message {
+            margin: 20px;
+            font-size: 22px;
+        }
+        button {
+            font-size: 20px;
+            padding: 15px 30px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkred;
+        }
+        #scary-img {
+            display: none;
+            margin-top: 40px;
+            width: 90%;
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Diqqat! Telefoningizda xavfli virus topildi!</h1>
+    <p id="message">Tozalash uchun pastdagi tugmani bosing.</p>
+    <button onclick="showScare()">Tozalash</button>
+    <img id="scary-img" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fsuret.pics%2Fuz%2F731-avataringiz-uchun-qorqinchli-rasmlar-100-fotosurat.html&psig=AOvVaw18CthS3Tz7uZEa80fd_Xry&ust=1746714382251000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCICrxaXIkY0DFQAAAAAdAAAAABAE" alt="Qo‘rqinchli rasm">
+
+    <script>
+        function showScare() {
+            document.getElementById('message').innerText = "Tozalanyapti...";
+            setTimeout(() => {
+                document.body.style.backgroundColor = 'black';
+                document.getElementById('scary-img').style.display = 'block';
+                document.getElementById('message').innerText = "Virus tozalandi!";
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
