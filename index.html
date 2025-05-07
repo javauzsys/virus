@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prank Virus</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       background-color: black;
       color: red;
-      font-size: 20px; /* Yozuv kattaligini oshirish */
+      font-size: 40px; /* Yozuvni kattalashtirish */
       text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
       font-family: Arial, sans-serif;
     }
-    img {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-    }
     button {
-      padding: 15px 25px;
-      font-size: 25px; /* Tugma matnini kattalashtirish */
+      padding: 20px 40px;
+      font-size: 30px;
       background-color: red;
       color: white;
       border: none;
@@ -28,6 +34,11 @@
     button:hover {
       background-color: darkred;
     }
+    img {
+      width: 100vw; /* Rasmni butun ekranga kengaytirish */
+      height: 100vh;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
@@ -36,8 +47,11 @@
 
   <script>
     function startPrank() {
+      // Rasmni ekranga chiqarish
       document.body.innerHTML = '<img src="https://suret.pics/uploads/posts/2023-04/1680642126_suret-pics-p-kartinki-dlya-avatarki-khorrornie-26.jpg">';
-      var audio = new Audio('https://pixabay.com/ru/sound-effects/male-scream-in-fear-123079/');
+
+      // Audio qo‘shish
+      var audio = new Audio('https://www.soundjay.com/human/screaming-woman-01.mp3');
       audio.play();
     }
   </script>
