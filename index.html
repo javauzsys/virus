@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <title>Telefoningiz xavf ostida!</title>
-    <style>
-        body {
-            background-color: #111;
-            color: red;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            padding-top: 60px;
-        }
-        h1 {
-            font-size: 32px;
-            color: #ff3333;
-        }
-        #message {
-            margin: 20px;
-            font-size: 22px;
-        }
-        button {
-            font-size: 20px;
-            padding: 15px 30px;
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: darkred;
-        }
-        #scary-img {
-            display: none;
-            margin-top: 40px;
-            width: 90%;
-            max-width: 500px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Telefoningizda virus topildi!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: red;
+      font-family: sans-serif;
+      text-align: center;
+    }
+    #warning {
+      padding: 30px;
+      font-size: 28px;
+      animation: blink 1s infinite;
+    }
+    #clean-button {
+      padding: 15px 30px;
+      font-size: 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #scary-img {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 9999;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Diqqat! Telefoningizda xavfli virus topildi!</h1>
-    <p id="message">Tozalash uchun pastdagi tugmani bosing.</p>
-    <button onclick="showScare()">Tozalash</button>
-    <img id="scary-img" src="https://suret.pics/uploads/posts/2023-09/1695456998_1.jpg" alt="Qo‘rqinchli rasm">
+  <div id="warning">Telefoningizda xavfli virus topildi! Tozalash uchun tugmani bosing!</div>
+  <button id="clean-button">Virusni tozalash</button>
+  <img id="scary-img" src="https://suret.pics/uploads/posts/2023-09/1695456998_1.jpg" alt="Qo‘rqinchli rasm">
 
-    <script>
-        function showScare() {
-            document.getElementById('message').innerText = "Tozalanyapti...";
-            setTimeout(() => {
-                document.body.style.backgroundColor = 'black';
-                document.getElementById('scary-img').style.display = 'block';
-                document.getElementById('message').innerText = "Virus tozalandi!";
-            }, 2500);
-        }
-    </script>
+  <script>
+    const button = document.getElementById('clean-button');
+    const img = document.getElementById('scary-img');
+
+    button.addEventListener('click', () => {
+      img.style.display = 'block';
+      document.body.style.backgroundColor = 'black';
+      document.body.innerHTML = ''; // Hammasini tozalaydi
+      document.body.appendChild(img);
+    });
+  </script>
 </body>
 </html>
